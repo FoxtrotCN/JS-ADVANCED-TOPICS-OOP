@@ -18,5 +18,28 @@ const circle = {
 
 // We can access the properties and methods in object with dot notation
 
-circle.draw();
+// circle.draw();
+
+// If an object has more than 1 method we say that object has behavior
+// Let's suppose we want to create another circle object,
+// Doing in the was above could bring us some problems, so,
+// We can do this:
+
+// A factory function
+
+function createCircle(radius) {
+    // Create a circle object
+
+    return {
+        radius,
+        draw: function () {
+            console.log('Draw');
+        }
+    };
+}
+
+const circle1 = createCircle(2)
+console.log(circle1);
+circle1.draw();
+
 

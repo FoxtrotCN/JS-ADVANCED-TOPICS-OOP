@@ -42,4 +42,25 @@ const circle1 = createCircle(2)
 console.log(circle1);
 circle1.draw();
 
+// The way above is just one option.
+// We got another one in JS
+
+// A constructor function -> Use a naming convention different:
+// The first letter should be UpperCase
+
+function Circle(radius) {
+    this.radius = radius;
+    this.draw = function () {
+        console.log('Draw');
+    }
+}
+
+const anotherCircle = new Circle(2);
+console.log(anotherCircle);
+anotherCircle.draw();
+console.log(anotherCircle.radius);
+
+
+
+
 

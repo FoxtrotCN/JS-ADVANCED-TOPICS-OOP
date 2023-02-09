@@ -20,6 +20,9 @@ extend(Circle, Shape);
 Circle.prototype.draw = function () {
     console.log('draw');
 }
+Circle.prototype.duplicate = function () {
+    console.log('duplicate circle');
+}
 
 
 
@@ -29,5 +32,21 @@ function Square(area) {
 
 extend(Square, Shape);
 
+Square.prototype.duplicate = function () {
+    console.log('duplicate square');
+}
+
 const s = new Shape();
 const c = new Circle(1, 'red');
+
+
+const shapes = [
+    new Circle(1, 'blue'),
+    new Square(10)
+]
+
+for (let shape of shapes)
+    shape.duplicate();
+
+
+

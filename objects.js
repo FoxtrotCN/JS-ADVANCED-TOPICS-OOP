@@ -61,6 +61,38 @@ anotherCircle.draw();
 console.log(anotherCircle.radius);
 
 
+// Exercises
 
+// 1 - StopWatch
 
+function StopWatch() {
+    let startTime, endTime, running, duration = 0;
 
+    this.start = function () {
+        if (startTime)
+            throw new Error('The count already stared!');
+        running = true;
+        startTime = new Date();
+    };
+
+    this.stop = function () {
+        if (!startTime)
+            throw new Error('The count is not started!')
+        running = false;
+        endTime = new Date();
+
+        const seconds = (((endTime.getTime() - startTime.getTime()) / 1000));
+        duration += seconds;
+    };
+
+    this.reset = function () {
+        startTime = null;
+        endTime = null;
+        running = undefined;
+        duration = 0;
+    };
+
+    Object.defineProperty(this, 'duration', {
+        get: function () {return duration}
+    });
+}
